@@ -1,0 +1,13 @@
+
+require("igor.lazy")
+require("lazy").setup(require("igor.plugins"))
+require("igor.nvim-tree")
+require("igor.treesitter")
+require("igor.telescope")
+require("igor.dashboard")
+require("igor.lsp")
+require("igor.comments")
+require("igor.remap")
+require("igor.basic")
+require("igor.colorscheme")
+require("igor.autosave").setup()

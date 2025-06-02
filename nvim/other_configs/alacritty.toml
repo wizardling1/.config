@@ -1,0 +1,18 @@
+[font]
+normal = { family = "Hasklug Nerd Font", style = "Regular" }
+bold = { family = "Hasklug Nerd Font", style = "Bold" }
+italic = { family = "Hasklug Nerd Font", style = "Italic" }
+bold_italic = { family = "Hasklug Nerd Font", style = "Bold Italic" }
+size = 16
+
+[general]
+import = [
+   "~/.config/alacritty/themes/pencil_light.toml" 
+   #"~/.config/alacritty/themes/catppuccin_latte.toml" 
+   #"~/.config/alacritty/themes/catppuccin_mocha.toml" 
+   #"~/.config/alacritty/themes/everforest_dark.toml" 
+   #"~/.config/alacritty/themes/moonlight_ii_vscode.toml" 
+   #"~/.config/alacritty/themes/night_owl.toml" 
+   #"~/.config/alacritty/themes/omni.toml" 
+   #"~/.config/alacritty/themes/falcon.toml" 
+]
