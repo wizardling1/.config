@@ -1,3 +1,8 @@
 #theme = "catppuccin-mocha"
 theme = "ayu"
 font-family = "Hasklug Nerd Font Mono"
+
+keybind = ctrl+x>\=new_split:right
+keybind = ctrl+x>-=new_split:down
+keybind = ctrl+x>;=goto_split:next
+
