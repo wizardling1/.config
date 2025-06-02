@@ -1,1 +1,3 @@
-theme = ayu
+#theme = "catppuccin-mocha"
+theme = "ayu"
+font-family = "Hasklug Nerd Font Mono"
