@@ -37,7 +37,17 @@ require('lspconfig').hls.setup({
 require('lspconfig').clangd.setup({
     cmd = {"clangd", "--query-driver=/usr/bin/g++" },
 })
-require('lspconfig').pyright.setup({})
+require('lspconfig').pyright.setup({
+  before_init = function(_, config)
+    local python_path = require("venv-selector").python()
+    if python_path then
+      config.settings = config.settings or {}
+      config.settings.python = config.settings.python or {}
+      config.settings.python.pythonPath = python_path
+    end
+  end,
+})
+
 require('lspconfig').html.setup({})
 require('lspconfig').cssls.setup({})
 require('lspconfig').ts_ls.setup({

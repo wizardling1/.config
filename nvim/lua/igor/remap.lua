@@ -2,9 +2,6 @@
 -- switch buffers within vim with tab
 vim.api.nvim_set_keymap('n', '<Tab>', ':bnext<CR>', { noremap = true, silent = true })
 
--- Show floating diagnostic errors
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
-
 -- Disable arrow keys in normal mode
 vim.keymap.set('n', '<Up>', '<NOP>')
 vim.keymap.set('n', '<Down>', '<NOP>')
@@ -38,5 +35,8 @@ vim.keymap.set('v', '<C-k>', '10k', { noremap = true, silent = true })
 -- tabs
 vim.api.nvim_set_keymap('v', '<Tab>', '>gv', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<S-Tab>', '<gv', { noremap = true, silent = true })
+
+-- Show floating diagnostic errors
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { noremap = true, silent = true })
 
 
