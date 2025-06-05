@@ -1,5 +1,9 @@
 
+-- switch buffers within vim with tab
 vim.api.nvim_set_keymap('n', '<Tab>', ':bnext<CR>', { noremap = true, silent = true })
+
+-- Show floating diagnostic errors
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 
 -- Disable arrow keys in normal mode
 vim.keymap.set('n', '<Up>', '<NOP>')
@@ -22,7 +26,7 @@ vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
 vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>")
 vim.keymap.set("n", "<leader>cc", ":Telescope colorscheme<CR>")
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ls", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 -- Scroll down 10 lines
 vim.keymap.set('n', '<C-j>', '10j', { noremap = true, silent = true })
