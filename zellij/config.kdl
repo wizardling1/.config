@@ -168,7 +168,8 @@ keybinds clear-defaults=true {
     }
     shared_except {
         bind "Ctrl a" { FocusNextPane; }
-        bind "Ctrl ;" { GoToNextTab; }
+        bind "Ctrl ;" { GoToPreviousTab; }
+        bind "Ctrl '" { GoToNextTab; }
     }
     shared_except "locked" "normal" {
         bind "Ctrl c" { SwitchToMode "normal"; }
