@@ -100,4 +100,16 @@ return {
         },
       },
     },
-   }
+    {
+    "Shatur/neovim-ayu",
+    priority = 1000,
+    config = function()
+      require("ayu").setup({
+        mirage = false,
+        terminal = true,
+        overrides = {},
+      })
+      require("ayu").colorscheme() -- this applies the theme
+    end,
+  }
+}

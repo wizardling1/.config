@@ -40,3 +40,5 @@ vim.api.nvim_set_keymap('v', '<S-Tab>', '<gv', { noremap = true, silent = true }
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { noremap = true, silent = true })
 
 
+-- Vim
+vim.keymap.set("n", "<leader>lr", ":LeanRestartFile<CR>")

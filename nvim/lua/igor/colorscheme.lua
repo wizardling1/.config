@@ -1,1 +1,1 @@
-vim.cmd("colorscheme material-oceanic")
+vim.cmd("colorscheme delek")

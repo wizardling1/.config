@@ -1,5 +1,5 @@
-#theme = "catppuccin-mocha"
-theme = "ayu"
+theme = "catppuccin-mocha"
+#theme = "ayu"
 font-family = "Hasklug Nerd Font Mono"
 
 keybind = ctrl+x>\=new_split:right
