@@ -1,1 +1,1 @@
-vim.cmd("colorscheme delek")
+vim.cmd("colorscheme default")

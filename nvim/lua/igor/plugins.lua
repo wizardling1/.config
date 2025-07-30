@@ -1,4 +1,5 @@
 return {
+    { "EdenEast/nightfox.nvim" },
 	  { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } },
 	  { "nvim-tree/nvim-tree.lua" },
 	  { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },

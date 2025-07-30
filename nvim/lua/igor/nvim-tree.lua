@@ -7,7 +7,6 @@ require("nvim-tree").setup({
   },
   renderer = {
     group_empty = true,
-    highlight_git = true,  -- Show git status (requires git installed)
     icons = {
       show = {
         file = true,
@@ -19,6 +18,10 @@ require("nvim-tree").setup({
   },
   filters = {
     dotfiles = false,  -- Show hidden files (dotfiles)
+  },
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,
   },
 })
 

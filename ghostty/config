@@ -1,5 +1,12 @@
-theme = "catppuccin-mocha"
+#theme = "catppuccin-latte"
+theme = "farmhouse-light"
+
+#theme = "catppuccin-mocha"
 #theme = "ayu"
+#theme = "dracula"
+#theme = "adventure"
+#theme = "banana blueberry"
+
 font-family = "Hasklug Nerd Font Mono"
 
 keybind = ctrl+x>\=new_split:right
