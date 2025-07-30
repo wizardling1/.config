@@ -1,4 +1,10 @@
 return {
+    --[[
+    {
+      "OXY2DEV/markview.nvim",
+      lazy = false,
+    },
+    ]]
     { "EdenEast/nightfox.nvim" },
 	  { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } },
 	  { "nvim-tree/nvim-tree.lua" },
@@ -63,17 +69,7 @@ return {
         mappings = true,
       }
     },
-
-    {
-      "OXY2DEV/markview.nvim",
-      lazy = false,
-
-      -- For blink.cmp's completion
-      -- source
-      -- dependencies = {
-        --     "saghen/blink.cmp"
-        -- },
-      },
+    
     {
       "linux-cultist/venv-selector.nvim",
       dependencies = {
