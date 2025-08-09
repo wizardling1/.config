@@ -21,8 +21,9 @@ require('telescope').setup{
         ["<C-q>"] = require('telescope.actions').close,  -- Quit in insert mode (Ctrl+q)
         ["<C-p>"] = function(prompt_bufnr)
           local selected = action_state.get_selected_entry()
-	  update_colorscheme_file(selected.value)
+	        update_colorscheme_file(selected.value)
           actions.close(prompt_bufnr)
+          vim.cmd("colorscheme " .. selected.value)
         end,
         -- Apply preview as you scroll through the list
         ["<C-j>"] = function(prompt_bufnr)
