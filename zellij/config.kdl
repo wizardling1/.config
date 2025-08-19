@@ -255,6 +255,15 @@ keybinds clear-defaults=true {
         bind "p" { GoToPreviousTab; SwitchToMode "normal"; }
         bind "z" { ToggleFocusFullscreen; SwitchToMode "normal"; }
     }
+    shared_except "locked" {
+        bind "Ctrl ," {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/room.wasm" {
+                floating true
+                ignore_case true
+                quick_jump true
+            }
+        }
+    }
 }
 
 // Plugin aliases - can be used to change the implementation of Zellij
@@ -298,7 +307,7 @@ ui {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "ao"
+theme "ansi"
  
 // Choose the base input mode of zellij.
 // Default: normal
