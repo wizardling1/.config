@@ -5,4 +5,4 @@ alias ll="eza --group-directories-first --icons -l -a"
 alias lt="eza --group-directories-first --icons --tree"
 alias ze="zellij"
 
-PROMPT='%F{cyan}%n %F{magenta}%~%f%F{cyan}$%f '
+PROMPT='%F{green}%n %F{magenta}%~%f%F{green}$%f '
