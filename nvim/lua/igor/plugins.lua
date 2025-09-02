@@ -6,6 +6,23 @@ return {
     },
     ]]
     {
+      "okuuva/auto-save.nvim",
+      opts = {
+        enabled = true,
+        trigger_events = {
+          immediate_save = { "BufLeave", "FocusLost" },
+          defer_save = { "InsertLeave", "TextChanged" },
+          cancel_deferred_save = { "InsertEnter" },
+        },
+        debounce_delay = 1000,
+        condition = function(buf)
+          local ft = vim.bo[buf].filetype
+          local exclude = { "gitcommit", "TelescopePrompt" }
+          return not vim.tbl_contains(exclude, ft)
+        end,
+      },
+    },
+    {
       "f-person/auto-dark-mode.nvim",
       config = function()
         local function load_saved_scheme(mode)

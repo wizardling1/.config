@@ -1,2 +1,2 @@
 vim.o.background = "dark"
-vim.cmd("colorscheme blue")
+vim.cmd("colorscheme material-palenight")
