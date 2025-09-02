@@ -5,6 +5,35 @@ return {
       lazy = false,
     },
     ]]
+    {
+      "f-person/auto-dark-mode.nvim",
+      config = function()
+        local function load_saved_scheme(mode)
+          local path = vim.fn.stdpath("config") .. "/lua/igor/colorscheme_" .. mode .. ".lua"
+          pcall(dofile, path)   -- safe: won't error if file missing
+        end
+
+        require("auto-dark-mode").setup({
+          update_interval = 750,
+          set_dark_mode = function()
+            vim.o.background = "dark"
+            load_saved_scheme("dark")
+          end,
+          set_light_mode = function()
+            vim.o.background = "light"
+            load_saved_scheme("light")
+          end,
+        })
+        require("auto-dark-mode").init()
+
+        -- Also load once on startup (before the first OS callback fires)
+        if vim.o.background == "dark" then
+          load_saved_scheme("dark")
+        else
+          load_saved_scheme("light")
+        end
+      end,
+    },
     { "EdenEast/nightfox.nvim" },
 	  { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } },
 	  { "nvim-tree/nvim-tree.lua" },
@@ -83,7 +112,6 @@ return {
         },
       },
       lazy = false,
-      branch = "regexp", -- This is the regexp branch, use this for the new version
       keys = {
         { ",v", "<cmd>VenvSelect<cr>" },
       },
@@ -106,7 +134,6 @@ return {
         terminal = true,
         overrides = {},
       })
-      require("ayu").colorscheme() -- this applies the theme
     end,
   }
 }
