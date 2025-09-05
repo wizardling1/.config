@@ -14,7 +14,7 @@ return {
           defer_save = { "InsertLeave", "TextChanged" },
           cancel_deferred_save = { "InsertEnter" },
         },
-        debounce_delay = 1000,
+        debounce_delay = 500,
         condition = function(buf)
           local ft = vim.bo[buf].filetype
           local exclude = { "gitcommit", "TelescopePrompt" }
