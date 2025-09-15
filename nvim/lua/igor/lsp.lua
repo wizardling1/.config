@@ -32,12 +32,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- select languages 
-require('lspconfig').hls.setup({
+local lsp = require('lspconfig')
+
+lsp.hls.setup({
 })
-require('lspconfig').clangd.setup({
+lsp.clangd.setup({
     cmd = {"clangd", "--query-driver=/usr/bin/g++" },
 })
-require('lspconfig').pyright.setup({
+lsp.pyright.setup({
   before_init = function(_, config)
     local python_path = require("venv-selector").python()
     if python_path then
@@ -48,15 +50,61 @@ require('lspconfig').pyright.setup({
   end,
 })
 
-require('lspconfig').html.setup({})
-require('lspconfig').cssls.setup({})
-require('lspconfig').ts_ls.setup({
+lsp.html.setup({})
+lsp.cssls.setup({})
+
+local ts_server = lsp.ts_ls or lsp.tsserver
+
+ts_server.setup({
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+  flags = { debounce_text_changes = 150 },
+  single_file_support = true,
+
+  filetypes = {
+    'javascript', 'javascriptreact', 'javascript.jsx',
+    'typescript', 'typescriptreact', 'typescript.tsx'
+  },
+
+  settings = {
+    typescript = {
+      inlayHints = {
+        includeInlayParameterNameHints = "all",
+        includeInlayFunctionParameterTypeHints = true,
+        includeInlayVariableTypeHints = true,
+        includeInlayPropertyDeclarationTypeHints = true,
+        includeInlayFunctionLikeReturnTypeHints = true,
+        includeInlayEnumMemberValueHints = true,
+      },
+      suggest = { completeFunctionCalls = true },
+      format = { enable = false },
+    },
+    javascript = {
+      inlayHints = {
+        includeInlayParameterNameHints = "all",
+        includeInlayFunctionParameterTypeHints = true,
+        includeInlayVariableTypeHints = true,
+        includeInlayPropertyDeclarationTypeHints = true,
+        includeInlayFunctionLikeReturnTypeHints = true,
+        includeInlayEnumMemberValueHints = true,
+      },
+      suggest = { completeFunctionCalls = true },
+      format = { enable = false },
+    },
+  },
+
+  init_options = { hostInfo = "neovim" },
+})
+
+--[[
+lsp.ts_ls.setup({
   capabilities = require('cmp_nvim_lsp').default_capabilities(),
   flags = {
     debounce_text_changes = 150,
   },
 
 })
+]]
+
 require'lspconfig'.texlab.setup{
     settings = {
         texlab = {
