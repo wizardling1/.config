@@ -1,2 +1,2 @@
 vim.o.background = "light"
-vim.cmd("colorscheme dayfox")
+vim.cmd("colorscheme delek")
